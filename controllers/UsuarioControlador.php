@@ -14,6 +14,8 @@ class UsuarioControlador {
 		require_once '../models/dto/Usuario.php';
 		require_once '../models/dao/UsuarioDAO.php';
 		
+		$errores = array();
+		
 		if (isset($_POST["opcion"]) || isset($_GET["opcion"])) {
 			if (isset($_POST["opcion"])) {
 				$opcion = $_POST["opcion"];
@@ -30,10 +32,23 @@ class UsuarioControlador {
 						$u->setNombre($_POST["nombre"]);
 						$u->setClave($_POST["clave"]);
 						
-						if ($daoUsuario->save($u)) {
-							$_SESSION["crear_usuario"] = "Exitoso";
-						} else {
-							$_SESSION["crear_usuario"] = "Fallido";
+						if (strlen($_POST["nombre"]) != 6) {
+						    array_push($errores, "El nombre ingresado debe poseer 6 caracteres");
+						}
+						if (!($_POST["nombre"] == ctype_lower($_POST["nombre"]))) {
+						    array_push($errores, "El nombre ingresado debe estar en minusculas");
+						}
+						
+						if (sizeof($errores) == 0) {
+						    if ($daoUsuario->save($u)) {
+						        $_SESSION["crear_usuario"] = "Exitoso";
+						    } else {
+						        $_SESSION["crear_usuario"] = "Fallido";
+						    }
+						}
+						else {
+						    $_SESSION["crear_usuario"] = "Fallido";
+						    $_SESSION["errores"] = $errores;
 						}
 						header("Location: " . BASE_URL . "Usuario/CrearUsuario");
 					}

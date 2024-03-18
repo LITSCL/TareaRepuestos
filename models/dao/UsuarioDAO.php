@@ -19,7 +19,7 @@ class UsuarioDAO {
 		$nombre = $u->getNombre();
 		$clave = $u->getClave();
 		
-		$query = $this->db->query("INSERT INTO usuario VALUES('null', '{$nombre}', '{$clave}')");
+		$query = $this->db->query("INSERT INTO usuario VALUES(null, '{$nombre}', '{$clave}')");
 		return $query;
 	}
 	

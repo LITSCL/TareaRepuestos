@@ -24,7 +24,7 @@ class RepuestoDAO {
 	    $descripcion = $r->getDescripcion();
 	    $precio = $r->getPrecio();
 		
-		$query = $this->db->query("INSERT INTO repuesto VALUES('null', '{$marca}', '{$modelo}', {$year}, '{$numeroParte}', '{$codigo}', '{$descripcion}', {$precio})");
+		$query = $this->db->query("INSERT INTO repuesto VALUES(null, '{$marca}', '{$modelo}', {$year}, '{$numeroParte}', '{$codigo}', '{$descripcion}', {$precio})");
 		return $query;
 	}
 	

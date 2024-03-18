@@ -39,6 +39,25 @@
 	endif;
 	?>
 	
+	<?php 
+	if (isset($_SESSION["crear_usuario"]) && $_SESSION["crear_usuario"] == "Fallido" && isset($_SESSION["errores"])):
+	?>
+		<div class="listado-errores">
+			<ul>	
+			<?php 
+			foreach ($_SESSION["errores"] as $error):
+			?>
+				<li><?=$error?></li>
+			<?php 
+			endforeach;
+			?>
+			</ul>
+		</div>
+	<?php 
+	endif;
+	?>
+	
 	<?php Helper::borrarSesion("crear_usuario"); ?>
+	<?php Helper::borrarSesion("errores"); ?>
 </body>
 </html>
