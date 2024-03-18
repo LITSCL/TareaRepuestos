@@ -3,7 +3,7 @@ class Database {
 	private static $servidor = "localhost";
 	private static $usuario = "root";
 	private static $clave = "root";
-	private static $baseDeDatos = "dbcontroladorfrontalmvc";
+	private static $baseDeDatos = "dbtarearepuestos";
 	private static $puerto = 3306;
 	
 	public static function conectar() {

@@ -8,22 +8,23 @@ else {
 ?>
 
 <?php
-class CategoriaDAO {
+class ClienteDAO {
 	public $db;
 	
 	public function __construct() {
 		$this->db = Database::conectar(); //Cuando se crea una instancia de la capa DAO, el programa se conecta a la base de datos.
 	}
 	
-	public function save(Categoria $c) {	
+	public function save(Cliente $c) {
 		$nombre = $c->getNombre();
-		$query = $this->db->query("INSERT INTO categoria VALUES(null, '{$nombre}')");
-
-		return $query;
-	}
-	
-	public function getAll() {		
-		$query = $this->db->query("SELECT * FROM categoria");
+		$apellido = $c->getApellido();
+		$identificacion = $c->getIdentificacion();
+		$sexo = $c->getSexo();
+		$direccion = $c->getDireccion();
+		$telefono = $c->getTelefono();
+		$correo = $c->getCorreo();
+		
+		$query = $this->db->query("INSERT INTO cliente VALUES(null, '{$nombre}', '{$apellido}', '{$identificacion}', '{$sexo}', '{$direccion}', '{$telefono}', '{$correo}')");
 		return $query;
 	}
 	
