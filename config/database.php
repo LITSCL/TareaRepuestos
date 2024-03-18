@@ -2,7 +2,7 @@
 class Database {
 	private static $servidor = "localhost";
 	private static $usuario = "root";
-	private static $clave = "root";
+	private static $clave = "";
 	private static $baseDeDatos = "dbtarearepuestos";
 	private static $puerto = 3306;
 	

@@ -26,15 +26,15 @@
 			</tr>
 			<tr>
 				<td>Numero Parte</td>
-				<td><input type="number" name="numeroParte" required/></td>
+				<td><input type="text" name="numeroParte" required/></td>
 			</tr>
 			<tr>
 				<td>Codigo</td>
-				<td><input type="number" name="codigo" required/></td>
+				<td><input type="text" name="codigo" required/></td>
 			</tr>
 			<tr>
 				<td>Descripcion</td>
-				<td><input type="number" name="descripcion" required/></td>
+				<td><input type="text" name="descripcion" required/></td>
 			</tr>
 			<tr>
 				<td>Precio</td>

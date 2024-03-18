@@ -1,9 +1,9 @@
 <?php
 if (file_exists('config/database.php')) {
-	require_once 'config/database.php'; //Se usa para incluirse en el controlador frontal (Cuando se renderiza una vista).
+	require_once 'config/database.php';
 }
 else {
-	require_once '../config/database.php'; //Se usa para incluirse en el método "controlador" de los controladores del modelo.
+	require_once '../config/database.php';
 }
 ?>
 
@@ -12,7 +12,7 @@ class ClienteDAO {
 	public $db;
 	
 	public function __construct() {
-		$this->db = Database::conectar(); //Cuando se crea una instancia de la capa DAO, el programa se conecta a la base de datos.
+		$this->db = Database::conectar();
 	}
 	
 	public function save(Cliente $c) {
