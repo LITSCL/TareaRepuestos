@@ -38,7 +38,7 @@
 			</tr>
 			<tr>
 				<td>Correo</td>
-				<td><input type="text" name="correo" required/></td>
+				<td><input type="email" name="correo" required/></td>
 			</tr>
 		</table>
 		<button type="submit" name="opcion" value="1">Crear</button>
